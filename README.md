@@ -1,17 +1,42 @@
-# Project Title
+# Machine Learning From Scratch
 
-One Paragraph of project description goes here
+This repo is intended to give you a good understanding of the basics of Machine Learning
+from scratch (no dependencies except numpy). There are many amazing libraries out 
+there like TensorFlow, pytorch, and scikitlearn - just to name a few - that use GPU optimization, 
+implement the latest algorithms, and are written in C to deliver the greatest performance. 
+The only problem with these libraries is that they abstract the HELL out of everything. This is great 
+if you're a professional who just needs to deliver production code that is reliable, fast, and scalable, 
+but if you're just starting out with Machine Learning it can make the "hands on" approach a lot less... 
+well... "hands on".
+
+I found that during my journey through Machine Learning I kept asking myself, "but how does this work??",
+and although I read through many repo's and ML libraries to try and understand, everything seemed
+so obscure. I hope to collect just the raw essence of ML here.
 
 ## Getting Started
 
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
+While we are not going to use dependencies outside of Numpy, I recommend making a virtual environment
+just to practice.
 
 ### Prerequisites
 
-What things you need to install the software and how to install them
+1) Python 3.X
+2) A virtual environment
+3) Numpy
+4) Watch this video series: https://www.youtube.com/watch?v=aircAruvnKk
 
+For Windows
 ```
-Give examples
+python -m venv venv
+venv\Scripts\activate
+pip install numpy
+```
+
+For MacOS
+```
+python -m venv venv
+. venv/bin/activate
+pip install numpy
 ```
 
 ### Installing
