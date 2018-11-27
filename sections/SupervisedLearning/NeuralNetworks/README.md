@@ -8,11 +8,18 @@ The essence of Neural networks is learning how to associate a set of features (i
 
 # A Simple Diagram
 
-Feature - \\ <br>
-Feature -  \\ <br>
-             ---- A Neural Network ----> Label <br>
-Feature -  / <br>
-Feature - / <br>
+-Feature <br>
+-Feature <br>
+-Feature <br>
+-Feature <br>
+| <br>
+| <br>
+V <br>
+-A Neaural Network <br>
+| <br>
+| <br>
+v <br>
+-Label <br>
 
 We can break training down into two parts:
 * Forward Pass
