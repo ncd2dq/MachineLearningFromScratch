@@ -43,9 +43,10 @@ pip install numpy
 
 * Supervised Learning
 	* Neural Networks
-		* What is it?
-			* Different Types [Chart](https://cdn-images-1.medium.com/max/1000/1*cuTSPlTq0a_327iTPJyD-Q.png)
-		* Build it
+		* Different Types [Chart](https://cdn-images-1.medium.com/max/1000/1*cuTSPlTq0a_327iTPJyD-Q.png)
+		* Feed Forward	
+			* What is it?
+			* Build it
 	* Decision Trees
 		* What is it?
 		* Build it
