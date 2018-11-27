@@ -24,11 +24,11 @@ v <br>
 # Features and Feature Selection
 
 A feature is just an attribute of your data that you think might have at least something to do with your desired result. Imagine if you were tasked with coming up with the value of a house. What data would you want to help you out! Those are your features. If you're building a neural network to appraise the value of a house you might use the following features:
-1. # of Rooms
+1. \# of Rooms
 2. Sq. Ft.
 3. State
 4. City
-5. # of bathrooms
+5. \# of bathrooms
 6. Garage Space
 7. Has a pool or not
 
