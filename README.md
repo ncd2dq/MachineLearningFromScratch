@@ -1,9 +1,9 @@
 # Machine Learning From Scratch
 
-This repo is intended to give you a good understanding of the basics of Machine Learning
+This repo is intended to give you a good understanding of the basics of how to implement Machine Learning
 from scratch (no dependencies except numpy). 
 
-There are many amazing libraries out there like TensorFlow, pytorch, and scikitlearn - just to name a few - that use GPU optimization, implement the latest algorithms, and are written in C to deliver the best performance. 
+There are many amazing libraries out there like TensorFlow, PyTorch, and scikit-learn - to name a few - that use GPU optimization, implement the latest algorithms, and are written in C to deliver the best performance. 
 The only problem with these libraries is that they abstract the HELL out of everything. 
 
 Abstraction is great if you're a professional who needs to deliver production code that is reliable, 
@@ -59,10 +59,12 @@ pip install numpy
 		* What is it?
 		* Build it
 
+
 * Unsupervised Learning
 	* k-means clustering
 		* What is it?
 		* Build it
+
 
 * Reinforcement Learning
 	* Q-Learning
@@ -71,6 +73,7 @@ pip install numpy
 	* Deep Q-Learning (Deep Reinforcement Learning)
 		* What is it?
 		* Build it
+
 
 * Evolutionary Algorithms
 	* Evolutionary Algorithms
@@ -101,5 +104,6 @@ This project is licensed under the MIT License
 ## Acknowledgments
 
 * The blog post that got me started with ML and inspired this tutorial series - [I am trask](https://iamtrask.github.io/2015/07/12/basic-python-network/)
+* Thank you [The Coding Train's Daniel Schiffman](https://www.youtube.com/channel/UCvjgXvBlbQiydffZU7m1_aw) for being the reason I stuck with coding
 * Thank you [Siraj Raval](https://www.youtube.com/channel/UCWN3xxRkmTPmbKwht9FuE5A) for your dedication to ML videos
 * Thank you [3Blue1Brown](https://www.youtube.com/channel/UCYO_jab_esuFRV4b17AJtAw) for breaking down ML into a human understandable form
