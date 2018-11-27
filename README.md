@@ -1,13 +1,13 @@
 # Machine Learning From Scratch
 
 This repo is intended to give you a good understanding of the basics of Machine Learning
-from scratch (no dependencies except numpy). There are many amazing libraries out 
-there like TensorFlow, pytorch, and scikitlearn - just to name a few - that use GPU optimization, 
-implement the latest algorithms, and are written in C to deliver the greatest performance. 
-The only problem with these libraries is that they abstract the HELL out of everything. This is great 
-if you're a professional who just needs to deliver production code that is reliable, fast, and scalable, 
-but if you're just starting out with Machine Learning it can make the "hands on" approach a lot less... 
-well... "hands on".
+from scratch (no dependencies except numpy). 
+
+There are many amazing libraries out there like TensorFlow, pytorch, and scikitlearn - just to name a few - that use GPU optimization, implement the latest algorithms, and are written in C to deliver the best performance. 
+The only problem with these libraries is that they abstract the HELL out of everything. 
+
+Abstraction is great if you're a professional who needs to deliver production code that is reliable, 
+fast, and scalable, but if you're just starting out with Machine Learning it can make the "hands on" approach a lot less... well... "hands on".
 
 I found that during my journey through Machine Learning I kept asking myself, "but how does this work??",
 and although I read through many repo's and ML libraries to try and understand, everything seemed
@@ -20,8 +20,8 @@ just to practice.
 
 ### Prerequisites
 
-1) Python 3.X
-2) A virtual environment
+1) A virtual environment
+2) Python 3.x
 3) Numpy
 4) Watch this video series: https://www.youtube.com/watch?v=aircAruvnKk
 
@@ -39,53 +39,48 @@ python -m venv venv
 pip install numpy
 ```
 
-### Installing
+## Contents
 
-A step by step series of examples that tell you how to get a development env running
+* Supervised Learning
+	* Neural Networks
+		* What is it?
+			* Different Types [Chart](https://cdn-images-1.medium.com/max/1000/1*cuTSPlTq0a_327iTPJyD-Q.png)
+		* Build it
+	* Decision Trees
+		* What is it?
+		* Build it
+	* Linear Regression
+		* What is it?
+		* Build it
+	* Support Vector Machines
+		* What is it?
+		* Build it
+	* Decision Trees
+		* What is it?
+		* Build it
 
-Say what the step will be
+* Unsupervised Learning
+	* k-means clustering
+		* What is it?
+		* Build it
 
-```
-Give the example
-```
+* Reinforcement Learning
+	* Q-Learning
+		* What is it?
+		* Build it
+	* Deep Q-Learning (Deep Reinforcement Learning)
+		* What is it?
+		* Build it
 
-And repeat
+* Evolutionary Algorithms
+	* Evolutionary Algorithms
+		* What is it?
+		* Build it
+	* Neuro-Evolutionary Network (Neural Networks + Evolutionary Algorithms)
+		* What is it?
+		* Build it
 
-```
-until finished
-```
-
-End with an example of getting some data out of the system or using it for a little demo
-
-## Running the tests
-
-Explain how to run the automated tests for this system
-
-### Break down into end to end tests
-
-Explain what these tests test and why
-
-```
-Give an example
-```
-
-### And coding style tests
-
-Explain what these tests test and why
-
-```
-Give an example
-```
-
-## Deployment
-
-Add additional notes about how to deploy this on a live system
-
-## Built With
-
-* [Dropwizard](http://www.dropwizard.io/1.0.2/docs/) - The web framework used
-* [Maven](https://maven.apache.org/) - Dependency Management
-* [ROME](https://rometools.github.io/rome/) - Used to generate RSS Feeds
+* Machine Learning Terminology
 
 ## Contributing
 
@@ -97,16 +92,14 @@ We use [SemVer](http://semver.org/) for versioning. For the versions available, 
 
 ## Authors
 
-* **Billie Thompson** - *Initial work* - [PurpleBooth](https://github.com/PurpleBooth)
-
-See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
+* **Nicholas Dima** - *Tutorials/Code* - [Me](www.nickdima.com)
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
+This project is licensed under the MIT License
 
 ## Acknowledgments
 
-* Hat tip to anyone whose code was used
-* Inspiration
-* etc
+* The blog post that got me started with ML and inspired this tutorial series - [I am trask](https://iamtrask.github.io/2015/07/12/basic-python-network/)
+* Thank you [Siraj Raval](https://www.youtube.com/channel/UCWN3xxRkmTPmbKwht9FuE5A) for your dedication to ML videos
+* Thank you [3Blue1Brown](https://www.youtube.com/channel/UCYO_jab_esuFRV4b17AJtAw) for breaking down ML into a human understandable form
