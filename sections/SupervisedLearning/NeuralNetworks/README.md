@@ -14,16 +14,35 @@ The essence of Neural networks is learning how to associate a set of features (i
 -Feature <br>
 | <br>
 | <br>
-V <br>
+v <br>
 -A Neaural Network <br>
 | <br>
 | <br>
 v <br>
 -Label <br>
 
+# Features and Feature Selection
+
+A feature is just an attribute of your data that you think might have at least something to do with your desired result. Imagine if you were tasked with coming up with the value of a house. What data would you want to help you out! Those are your features. If you're building a neural network to appraise the value of a house you might use the following features:
+1. # of Rooms
+2. Sq. Ft.
+3. State
+4. City
+5. # of bathrooms
+6. Garage Space
+7. Has a pool or not
+
+The magic of Neural Networks is that they will learn which features and feature combinations are the most important. Although we created a list above of features we think are important, maybe the only thing that matters is '# of Rooms' and 'Sq. Ft.'. The Neural Network is a great tool to figure out some combination of features that are important that a human may not easily figure out.
+
+The above example was rather simple, sometimes it's really difficult to determine what features to give your Neural Network and there is a whole field of study on Feature Selection that I wont dive into, but just know that can be an entire tutorial in itself.
+
+# Training
+
 We can break training down into two parts:
 * Forward Pass
-* Back propogation
+* Back Propogation
 
 # Forward Pass
+
+# Back Propogation
 
