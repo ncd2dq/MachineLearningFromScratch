@@ -41,7 +41,7 @@ pip install numpy
 
 ## Contents
 
-Supervised Learning
+* Supervised Learning
 	* Neural Networks
 		* Different Types [Chart](https://cdn-images-1.medium.com/max/1000/1*cuTSPlTq0a_327iTPJyD-Q.png)
 		* Feed Forward	
@@ -61,13 +61,13 @@ Supervised Learning
 		* Build it
 
 
-Unsupervised Learning
+* Unsupervised Learning
 	* k-means clustering
 		* What is it?
 		* Build it
 
 
-Reinforcement Learning
+* Reinforcement Learning
 	* Q-Learning
 		* What is it?
 		* Build it
@@ -76,7 +76,7 @@ Reinforcement Learning
 		* Build it
 
 
-Evolutionary Algorithms
+* Evolutionary Algorithms
 	* Evolutionary Algorithms
 		* What is it?
 		* Build it
@@ -84,7 +84,7 @@ Evolutionary Algorithms
 		* What is it?
 		* Build it
 
-Machine Learning Terminology
+* Machine Learning Terminology
 
 ## Contributing
 
