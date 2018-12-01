@@ -14,3 +14,6 @@ Unsupervised Learning
 Neural Network
 Deep Neural Network
 Deep Learning
+Autoencoders
+Generators
+Deep Fakes
