@@ -1,7 +1,5 @@
 import numpy as np
 
-# (rows, cols)
-
 # Data key:
 #
 # Randomly picked pattern in first 2 elements
@@ -25,7 +23,10 @@ import numpy as np
 # [0, 0, 1, 0]
 # [0, 1]
 
+#
+# Create input data
 # Each row in this array is a complete set of features for 1 trial
+#
 feature_data = np.array(
                     [
                         [1, 0, 0, 0, 0],
@@ -37,7 +38,10 @@ feature_data = np.array(
                         [0, 1, 0, 1, 0]
                     ])
 
+#
+# Create output data
 # Each row in this array is a complete set of labels that corresponds to a complete set of features
+#
 label_data = np.array(
                     [
                         [0, 0],
@@ -49,13 +53,14 @@ label_data = np.array(
                         [1, 1]
                     ])
 
-
+#
 # Set up your hidden layer weights to be random value in range -1, 1
-# Every layer will have 1 more layer than your data set because of the bias
-# I'll do a multi layer network, even though this problem is not complex, just to show you how
+# Every layer will have 1 more row than the previous layer because we will be adding a bias
+#
 syn0 = 2 * np.random.random((5 + 1, 5)) - 1
 syn1 = 2 * np.random.random((5 + 1, 3)) - 1
 syn2 = 2 * np.random.random((3 + 1, 2)) - 1
+
 
 def sigmoid(x, deriv=False):
     '''
@@ -75,13 +80,14 @@ def sigmoid(x, deriv=False):
     else:
         return output
 
+
 def relu(x, deriv=False):
     '''
     ::param x np.array:: value to apply relu function to
     ::param deriv boolean:: flag to use derivative of relu
     ::return np.array::
 
-    The relu (rectafied linear unit) activation function. In recent times this has become a lot more popular
+    The leaky relu (rectafied linear unit) activation function. In recent times this has become a lot more popular
     than the sigmoid activation function, especially within a deeply connected network. This is because sigmoid 
     functions have a problem with vanishing gradients. As the x value gets large, the value output of the sigmoid
     gets incredibly small. The constant gradient of the relu results in much faster learning. Additionally,
@@ -90,10 +96,10 @@ def relu(x, deriv=False):
 
     if deriv:
         x[x > 0] = 1
-        x[x < 0] = 0.01 * x[x < 0]  # 0.1 instead of 0 to add leaky ReLu and avoid vanishing gradient
+        x[x < 0] = 0.01   #0.01 * x[x < 0]  # 0.1 instead of 0 to add leaky ReLu and avoid vanishing gradient
         return x
     else:
-        return np.maximum(x, 0, x)
+        return  np.maximum(x, 0.01 * x, x) #np.maximum(x, 0, x)
 
 
 def add_bias(input_data):
@@ -108,12 +114,17 @@ def add_bias(input_data):
     return input_with_bias
 
 
-def predict(weights, test_data):
-    syn0, syn1, syn2 = weights
-    final_activation = sigmoid
-    other_activation = relu
+def predict(weights, feature_data, final_activation, other_activation):
+    '''
+    ::param weights np.array::
+    ::param test_data np.arry::
+    ::return np.array::
 
-    layer_0 = test_data
+    One forward pass of the data against weights to predit label
+    '''
+    syn0, syn1, syn2 = weights
+
+    layer_0 = feature_data
     layer_0_b = add_bias(layer_0)
 
     layer_1 = np.dot(layer_0_b, syn0)
@@ -127,12 +138,13 @@ def predict(weights, test_data):
     layer_3 = np.dot(layer_2_b, syn2)
     layer_3 = final_activation(layer_3)
 
-    return layer_3
+    return layer_0_b, layer_1_b, layer_2_b, layer_3
+
 
 def train(weights, feature_data, label_data, epocs, learning_rate):
-    syn0, syn1, syn2 = weights
     final_activation = sigmoid
-    other_activation = relu #relu
+    other_activation = relu
+    syn0, syn1, syn2 = weights
 
     for i in range(epocs):
 
@@ -140,20 +152,12 @@ def train(weights, feature_data, label_data, epocs, learning_rate):
         # Forward propogation
         #
 
-        # Input layer
-        layer_0 = feature_data
-        layer_0_b = add_bias(layer_0)
-
-        layer_1 = np.dot(layer_0_b, syn0)
-        layer_1 = other_activation(layer_1)
-
-        layer_1_b = add_bias(layer_1)
-        layer_2 = np.dot(layer_1_b, syn1)
-        layer_2 = other_activation(layer_2)
-
-        layer_2_b = add_bias(layer_2)
-        layer_3 = np.dot(layer_2_b, syn2)
-        layer_3 = final_activation(layer_3)
+        layer_0_b, layer_1_b, layer_2_b, layer_3 = predict(
+                                                            weights, 
+                                                            feature_data, 
+                                                            final_activation, 
+                                                            other_activation
+                                                            )
 
         #
         # Backward propogation
@@ -195,7 +199,7 @@ def train(weights, feature_data, label_data, epocs, learning_rate):
     layer_3[layer_3 < 0.5] = 0
     print(layer_3)
 
-train((syn0, syn1, syn2), feature_data, label_data, 15000, 0.05)
+train((syn0, syn1, syn2), feature_data, label_data, 20000, 0.05)
 
 
 #
@@ -204,15 +208,15 @@ train((syn0, syn1, syn2), feature_data, label_data, 15000, 0.05)
 print('\n')
 # Should be (1, 0)
 test_data = np.array([[0, 1, 0, 0, 0]])
-guess = predict((syn0, syn1, syn2), test_data)
+*a, guess = predict((syn0, syn1, syn2), test_data, sigmoid, relu)
 print(guess)
 
 # Should be (1, 0)
 test_data = np.array([[1, 1, 0, 0, 0]])
-guess = predict((syn0, syn1, syn2), test_data)
+*a, guess = predict((syn0, syn1, syn2), test_data, sigmoid, relu)
 print(guess)
 
 # Should be (0, 1)
 test_data = np.array([[0, 0, 0, 1, 0]])
-guess = predict((syn0, syn1, syn2), test_data)
+*a, guess = predict((syn0, syn1, syn2), test_data, sigmoid, relu)
 print(guess)
