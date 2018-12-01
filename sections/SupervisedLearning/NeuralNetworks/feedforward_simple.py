@@ -54,8 +54,9 @@ label_data = np.array(
                     ])
 
 #
-# Set up your hidden layer weights to be random value in range -1, 1
-# Every layer will have 1 more row than the previous layer because we will be adding a bias
+# Set up your hidden layer weights to be a random value in range -1, 1
+# Every synapse will have 1 more row than there are columns of the previous layer 
+# because we will be adding a bias
 #
 syn0 = 2 * np.random.random((5 + 1, 5)) - 1
 syn1 = 2 * np.random.random((5 + 1, 3)) - 1
@@ -81,7 +82,7 @@ def sigmoid(x, deriv=False):
         return output
 
 
-def relu(x, deriv=False):
+def leakyrelu(x, deriv=False):
     '''
     ::param x np.array:: value to apply relu function to
     ::param deriv boolean:: flag to use derivative of relu
@@ -90,16 +91,17 @@ def relu(x, deriv=False):
     The leaky relu (rectafied linear unit) activation function. In recent times this has become a lot more popular
     than the sigmoid activation function, especially within a deeply connected network. This is because sigmoid 
     functions have a problem with vanishing gradients. As the x value gets large, the value output of the sigmoid
-    gets incredibly small. The constant gradient of the relu results in much faster learning. Additionally,
+    gets incredibly small. The constant gradient of the leakyrelu results in much faster learning. Additionally,
     the computational complexity of relu is much lower than sigmoid.
     '''
 
+    leaky_slope = 0.01
     if deriv:
         x[x > 0] = 1
-        x[x < 0] = 0.01   #0.01 * x[x < 0]  # 0.1 instead of 0 to add leaky ReLu and avoid vanishing gradient
+        x[x < 0] = leaky_slope
         return x
     else:
-        return  np.maximum(x, 0.01 * x, x) #np.maximum(x, 0, x)
+        return  np.maximum(x, leaky_slope * x, x)
 
 
 def add_bias(input_data):
@@ -143,7 +145,7 @@ def predict(weights, feature_data, final_activation, other_activation):
 
 def train(weights, feature_data, label_data, epocs, learning_rate):
     final_activation = sigmoid
-    other_activation = relu
+    other_activation = leakyrelu
     syn0, syn1, syn2 = weights
 
     for i in range(epocs):
@@ -151,7 +153,6 @@ def train(weights, feature_data, label_data, epocs, learning_rate):
         #
         # Forward propogation
         #
-
         layer_0_b, layer_1_b, layer_2_b, layer_3 = predict(
                                                             weights, 
                                                             feature_data, 
@@ -162,9 +163,7 @@ def train(weights, feature_data, label_data, epocs, learning_rate):
         #
         # Backward propogation
         # get deltas
-
-        # For all but first layer, dot the upstream error with current synapse transpose
-        # Delta is always the error * deriv_actiation(layer)
+        #
         layer_3_error = label_data - layer_3
         layer_3_delta = layer_3_error * final_activation(layer_3, deriv=True)
 
@@ -172,51 +171,57 @@ def train(weights, feature_data, label_data, epocs, learning_rate):
         layer_2_error = np.dot(layer_3_error, syn2.T)
         layer_2_delta = layer_2_error * other_activation(layer_2_b, deriv=True)
 
-        layer_2_error = layer_2_error[:,:-1] # Remove last column (bias)
+        layer_2_error = layer_2_error[:,:-1] # Remove bias column
         layer_1_error = np.dot(layer_2_error, syn1.T)
         layer_1_delta = layer_1_error * other_activation(layer_1_b, deriv=True)
 
         #
         # Backward propogation
         # update weights
+        #
 
-        layer_2_delta = layer_2_delta[:,:-1] # to remove bias delta
-        layer_1_delta = layer_1_delta[:,:-1] # to remove bias delta
+        # Remove bias column from deltas
+        layer_2_delta = layer_2_delta[:,:-1]
+        layer_1_delta = layer_1_delta[:,:-1]
 
-        # Dot the transpose of the layer with the upstream delta
+        # Update weights
         syn2 += np.dot(layer_2_b.T, layer_3_delta) * learning_rate
         syn1 += np.dot(layer_1_b.T, layer_2_delta) * learning_rate
         syn0 += np.dot(layer_0_b.T, layer_1_delta) * learning_rate
 
+        # Print error every 1000 epocs
         if i % 1000 == 0:
             print('Current error: {}'.format(str(np.sum(layer_3_error))))
+
+        # Slowly reduce learning rate
         elif i % 5000 == 0 and i != 0:
             learning_rate *= 0.7
 
     print('\nComplete\n')
     print(label_data)
+    # Softmax on output
     layer_3[layer_3 > 0.5] = 1
     layer_3[layer_3 < 0.5] = 0
     print(layer_3)
 
+
 train((syn0, syn1, syn2), feature_data, label_data, 20000, 0.05)
 
-
 #
-# NN has not been trained on any of the below test data
+# Test NN on new data
+# Note, the NN has not been trained on any of the below test data
 #
-print('\n')
-# Should be (1, 0)
+print('\n', (1, 0))
 test_data = np.array([[0, 1, 0, 0, 0]])
-*a, guess = predict((syn0, syn1, syn2), test_data, sigmoid, relu)
+*a, guess = predict((syn0, syn1, syn2), test_data, sigmoid, leakyrelu)
 print(guess)
 
-# Should be (1, 0)
+print('\n', (1, 0))
 test_data = np.array([[1, 1, 0, 0, 0]])
-*a, guess = predict((syn0, syn1, syn2), test_data, sigmoid, relu)
+*a, guess = predict((syn0, syn1, syn2), test_data, sigmoid, leakyrelu)
 print(guess)
 
-# Should be (0, 1)
+print('\n', (0, 1))
 test_data = np.array([[0, 0, 0, 1, 0]])
-*a, guess = predict((syn0, syn1, syn2), test_data, sigmoid, relu)
+*a, guess = predict((syn0, syn1, syn2), test_data, sigmoid, leakyrelu)
 print(guess)
