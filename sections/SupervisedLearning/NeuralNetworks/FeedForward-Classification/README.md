@@ -11,20 +11,20 @@ For matrix multiplication we take the rows of the first matrix and dot product t
 Note for matrix - Name(rows, cols) - A(1, 3) to be multiplied by B(3, 1) the cols of A must match the rows of B.
 
 #### First Layer ####
-(1, 2) dot (2, 3) yields (1, 3)
-a b * i j k  -->  ai+bl aj+bm ak+an
+(1, 2) dot (2, 3) yields (1, 3) <br>
+a b * i j k  -->  ai+bl aj+bm ak+an <br>
       l m n  -->
 
 #### Second Layer ####
-(1, 3) dot (3, 3) yields (1, 3)
-a b c * i j k --> ai+bl+co aj+bm+cp ck+cn+cq
-		l m n -->
+(1, 3) dot (3, 3) yields (1, 3) <br>
+a b c * i j k --> ai+bl+co aj+bm+cp ck+cn+cq <br>
+		l m n --> <br>
 		o p q -->
 
 #### Third Layer ####
-(1, 3) dot (3, 1) yields (1, 1)
-a b c * i --> ai+bj+ck
-		j -->
+(1, 3) dot (3, 1) yields (1, 1) <br>
+a b c * i --> ai+bj+ck <br>
+		j --> <br>
 		k -->
 
 # Back Propogation
