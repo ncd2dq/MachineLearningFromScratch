@@ -42,7 +42,15 @@ We can break training down into two parts:
 * Forward Pass
 * Back Propogation
 
+I will generally describe it here and go more in-depth in the sections on specific types of neural networks as the architecture will affect the algorithm.
+
 # Forward Pass
+
+A forward pass consists of feeding your feature data through all the layers of your neural network. Mathemtaically this amounts to a lot of matrix multiplication between your feature data matrix and the weight matrices of the layers in your network. Conceptually, this means the weights in your neural network will activate to a varying amount and pass a signal through the network depending on how closely they recognize a pattern.
+
+Depending on the type of network, this "forward" pass can get quite intricate.
+
 
 # Back Propogation
 
+Back propogation is the process by which the network updates the weights of all the synapses within itself by propogating the error of the final output backwards through the network. This involves a bit of calculus, but a full understanding of the math is not necessary to grasp the concept, nor implement the algorithm. Mathematically, you are taking your error and multiplying it by the derivative of your activation function at every given layer and using that outcome to update your weights. Conceptually, you are assigning a "weighted fault" if you will to each node in the network. Nodes that played a larger part in the error will change more than those that didn't.
