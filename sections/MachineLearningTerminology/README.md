@@ -17,3 +17,6 @@ Deep Learning
 Autoencoders
 Generators
 Deep Fakes
+Learning Rate
+Epsilon Greedy
+Discount Factor
