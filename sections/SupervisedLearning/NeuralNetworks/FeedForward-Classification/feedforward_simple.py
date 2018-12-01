@@ -1,5 +1,16 @@
 import numpy as np
 
+
+#TODO
+# add type hints 
+# from typing import TypeVar, Callable, List, Any, Dict, Union
+# Callable for passing functions
+# List[int]
+# Dict[Any, int]
+# Union[int, float] if you accept both
+# def typehint(num: TypeVar('T'), exponent: int) -> int:
+#     return num ** exponent
+
 # Data key:
 #
 # Randomly picked pattern in first 2 elements
