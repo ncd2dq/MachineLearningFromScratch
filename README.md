@@ -44,16 +44,16 @@ pip install numpy
 * [Supervised Learning](https://github.com/ncd2dq/MachineLearningFromScratch/tree/master/sections/SupervisedLearning)
 	* [Neural Networks](https://github.com/ncd2dq/MachineLearningFromScratch/tree/master/sections/SupervisedLearning/NeuralNetworks)
 		* [Different Types](https://cdn-images-1.medium.com/max/1000/1*cuTSPlTq0a_327iTPJyD-Q.png)
-		* [Feed Forward  - Classification](https://github.com/ncd2dq/MachineLearningFromScratch/tree/master/sections/SupervisedLearning/NeuralNetworks/FeedForward)
+		* [Feed Forward  - Classification](https://github.com/ncd2dq/MachineLearningFromScratch/tree/master/sections/SupervisedLearning/NeuralNetworks/FeedForward-Classification)
 			* What is it?
 			* Build it
-		* Feed Forward - Regression
+		* [Feed Forward - Regression](https://github.com/ncd2dq/MachineLearningFromScratch/tree/master/sections/SupervisedLearning/NeuralNetworks/FeedForward-Regression)
 			* What is it?
 			* Build it
-		* Recurrent	
+		* [Recurrent](https://github.com/ncd2dq/MachineLearningFromScratch/tree/master/sections/SupervisedLearning/NeuralNetworks/Recurrent)
 			* What is it?
 			* Build it
-		* Convolutional	
+		* [Convolutional](https://github.com/ncd2dq/MachineLearningFromScratch/tree/master/sections/SupervisedLearning/NeuralNetworks/Convolutional)	
 			* What is it?
 			* Build it
 	* [Decision Trees](https://github.com/ncd2dq/MachineLearningFromScratch/tree/master/sections/SupervisedLearning/DecisionTrees)
@@ -88,6 +88,15 @@ pip install numpy
 		* Build it
 
 * [Machine Learning Terminology](https://github.com/ncd2dq/MachineLearningFromScratch/tree/master/sections/MachineLearningTerminology)
+
+## Recommended Initial Order
+
+I recommend going through these 4 first to get a good base level understanding of machine learning. After this list, the journey is all yours!
+
+1. Evolutionary Algorithms
+2. Feed Forward - Classification
+3. Neuro-Evolutionary Network
+4. Q-Learning
 
 ## Contributing
 
