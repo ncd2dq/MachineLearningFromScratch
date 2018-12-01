@@ -45,47 +45,25 @@ pip install numpy
 	* [Neural Networks](https://github.com/ncd2dq/MachineLearningFromScratch/tree/master/sections/SupervisedLearning/NeuralNetworks)
 		* [Different Types](https://cdn-images-1.medium.com/max/1000/1*cuTSPlTq0a_327iTPJyD-Q.png)
 		* [Feed Forward  - Classification](https://github.com/ncd2dq/MachineLearningFromScratch/tree/master/sections/SupervisedLearning/NeuralNetworks/FeedForward-Classification)
-			* What is it?
-			* Build it
 		* [Feed Forward - Regression](https://github.com/ncd2dq/MachineLearningFromScratch/tree/master/sections/SupervisedLearning/NeuralNetworks/FeedForward-Regression)
-			* What is it?
-			* Build it
 		* [Recurrent](https://github.com/ncd2dq/MachineLearningFromScratch/tree/master/sections/SupervisedLearning/NeuralNetworks/Recurrent)
-			* What is it?
-			* Build it
 		* [Convolutional](https://github.com/ncd2dq/MachineLearningFromScratch/tree/master/sections/SupervisedLearning/NeuralNetworks/Convolutional)	
-			* What is it?
-			* Build it
 	* [Decision Trees](https://github.com/ncd2dq/MachineLearningFromScratch/tree/master/sections/SupervisedLearning/DecisionTrees)
-		* What is it?
-		* Build it
 	* [Support Vector Machines](https://github.com/ncd2dq/MachineLearningFromScratch/tree/master/sections/SupervisedLearning/SupportVectorMachines)
-		* What is it?
-		* Build it
 
 
 * [Unsupervised Learning](https://github.com/ncd2dq/MachineLearningFromScratch/tree/master/sections/UnsupervisedLearning)
 	* [K-Means Clustering](https://github.com/ncd2dq/MachineLearningFromScratch/tree/master/sections/UnsupervisedLearning/KMeansClustering)
-		* What is it?
-		* Build it
 
 
 * [Reinforcement Learning](https://github.com/ncd2dq/MachineLearningFromScratch/tree/master/sections/ReinforcementLearning)
 	* [Q-Learning](https://github.com/ncd2dq/MachineLearningFromScratch/tree/master/sections/ReinforcementLearning/QLearning)
-		* What is it?
-		* Build it
 	* [Deep Q-Learning (Deep Reinforcement Learning)](https://github.com/ncd2dq/MachineLearningFromScratch/tree/master/sections/ReinforcementLearning/DeepQLearning)
-		* What is it?
-		* Build it
 
 
 * [Evolutionary Algorithms](https://github.com/ncd2dq/MachineLearningFromScratch/tree/master/sections/EvolutionaryAlgorithms)
 	* [Evolutionary Algorithms](https://github.com/ncd2dq/MachineLearningFromScratch/tree/master/sections/EvolutionaryAlgorithms/EvolutionaryAlgorithm)
-		* What is it?
-		* Build it
 	* [Neuro-Evolutionary Network (Neural Networks + Evolutionary Algorithms)](https://github.com/ncd2dq/MachineLearningFromScratch/tree/master/sections/EvolutionaryAlgorithms/NeuroEvolutionaryNetwork)
-		* What is it?
-		* Build it
 
 * [Machine Learning Terminology](https://github.com/ncd2dq/MachineLearningFromScratch/tree/master/sections/MachineLearningTerminology)
 
