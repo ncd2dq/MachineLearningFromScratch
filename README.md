@@ -44,19 +44,22 @@ pip install numpy
 * Supervised Learning
 	* [Neural Networks](https://github.com/ncd2dq/MachineLearningFromScratch/tree/master/sections/SupervisedLearning/NeuralNetworks)
 		* Different Types [Chart](https://cdn-images-1.medium.com/max/1000/1*cuTSPlTq0a_327iTPJyD-Q.png)
-		* [Feed Forward](https://github.com/ncd2dq/MachineLearningFromScratch/tree/master/sections/SupervisedLearning/NeuralNetworks/FeedForward)	
+		* [Feed Forward](https://github.com/ncd2dq/MachineLearningFromScratch/tree/master/sections/SupervisedLearning/NeuralNetworks/FeedForward) - Classification
+			* What is it?
+			* Build it
+		* Feed Forward - Regression
+			* What is it?
+			* Build it
+		* Recurrent	
+			* What is it?
+			* Build it
+		* Convolutional	
 			* What is it?
 			* Build it
 	* Decision Trees
 		* What is it?
 		* Build it
-	* Linear Regression
-		* What is it?
-		* Build it
 	* Support Vector Machines
-		* What is it?
-		* Build it
-	* Decision Trees
 		* What is it?
 		* Build it
 
