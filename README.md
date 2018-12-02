@@ -29,14 +29,14 @@ For Windows
 ```
 python -m venv venv
 venv\Scripts\activate
-pip install numpy
+pip install numpy matplotlib os random typing
 ```
 
 For MacOS
 ```
 python -m venv venv
 . venv/bin/activate
-pip install numpy
+pip install numpy matplotlib os random typing
 ```
 
 ## Contents
