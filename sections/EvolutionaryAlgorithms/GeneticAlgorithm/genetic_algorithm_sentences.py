@@ -32,15 +32,14 @@ class DNA(object):
 
         return DNA(len(self.genes), new_gene_sequence)
 
-    def mutate(self, mutation_rate: float) -> None:
+    def mutate(self) -> None:
         '''
         Randomly swaps out one strand in the gene list inplace
         '''
-        for i in range(len(self.genes)):
-            if random.random() < mutation_rate:
-                temp_list = list(self.genes)
-                temp_list[i] = random.choice(DNA.gene_pool)
-                self.genes = ''.join(temp_list)
+        rand_index = random.randint(0, len(self.genes) - 1)
+        temp_list = list(self.genes)
+        temp_list[rand_index] = random.choice(DNA.gene_pool)
+        self.genes = ''.join(temp_list)
 
     def __str__(self):
         return self.genes
@@ -83,7 +82,9 @@ class Sentence(object):
         self.fitness = fitness
 
     def mutate(self, mutation_rate: float) -> None:
-        self.dna.mutate(mutation_rate)
+
+        if random.random() < mutation_rate:
+            self.dna.mutate()
 
 
 class Population(object):
@@ -110,6 +111,7 @@ class Population(object):
         max_fitness = self.population[-1].fitness
         for index, entity in enumerate(self.population):
             self.population[index].fitness = entity.fitness / max_fitness
+
 
     def crossover(self) -> List[SentenceType]:
         '''
@@ -139,8 +141,19 @@ class Population(object):
     def get_best_child(self) -> SentenceType:
         return self.population[-1]
 
+    def total_fitness(self) -> int:
+        return sum(entity.fitness for entity in self.population)
+
+    def percent_learned(self, best: SentenceType, target: str) -> float:
+        total_possible = len(target)
+        total = 0
+        for b, t in zip(best.dna.genes, target):
+            if b == t:
+                total += 1
+        return total / total_possible
+
     def life_cycle(self, epocs, target: str) -> None:
-        
+
         for i in range(epocs):
             self.selection(target)
             best = self.get_best_child()
@@ -151,12 +164,13 @@ class Population(object):
             print('\rCurrent Generation: {}'.format(i))
             print('\rTarget: {}'.format(target))
             print('\rBest  : {}'.format(best))
+            print('\rPercent Complete: {}%'.format(self.percent_learned(best, target)*100))
             if best.dna.genes == target:
                 print('DONE')
                 break
 
 
-target = 'titties are grate!?'
-p = Population(15000, len(target))
-p.life_cycle(1000, target)
+target = 'im learning based on selection, crossover, and mutation'
+p = Population(10000, len(target))
+p.life_cycle(15000, target)
 input('------End of lifecycle')
