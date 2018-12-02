@@ -62,7 +62,7 @@ pip install numpy
 
 
 * [Evolutionary Algorithms](https://github.com/ncd2dq/MachineLearningFromScratch/tree/master/sections/EvolutionaryAlgorithms)
-	* [Evolutionary Algorithms](https://github.com/ncd2dq/MachineLearningFromScratch/tree/master/sections/EvolutionaryAlgorithms/EvolutionaryAlgorithm)
+	* [Genetic Algorithm](https://github.com/ncd2dq/MachineLearningFromScratch/tree/master/sections/EvolutionaryAlgorithms/GeneticAlgorithm)
 	* [Neuro-Evolutionary Network (Neural Networks + Evolutionary Algorithms)](https://github.com/ncd2dq/MachineLearningFromScratch/tree/master/sections/EvolutionaryAlgorithms/NeuroEvolutionaryNetwork)
 
 * [Machine Learning Terminology](https://github.com/ncd2dq/MachineLearningFromScratch/tree/master/sections/MachineLearningTerminology)
