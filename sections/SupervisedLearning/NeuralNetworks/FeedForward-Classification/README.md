@@ -34,6 +34,8 @@ a b c * i --> ai+bj+ck
 	k -->
 ```
 
+In a way, you can think of the Neural Network as transforming the feature data into label data. Notice that in the above example we started out with 1 row of feature data with 2 features - (1, 2) - and we ended up with 1 row of label data with 1 label - s(1, 1)
+
 # Back Propogation
 
 Back propogation is the process by which the network updates the weights of all the synapses within itself by propogating the error of the final output backwards through the network. This involves a bit of calculus, but is rather simple to implement in code for a feed forward network.
