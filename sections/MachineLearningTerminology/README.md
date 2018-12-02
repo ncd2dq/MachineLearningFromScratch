@@ -20,3 +20,5 @@ Deep Fakes
 Learning Rate
 Epsilon Greedy
 Discount Factor
+Data Preprocessing
+Data Cleaning
