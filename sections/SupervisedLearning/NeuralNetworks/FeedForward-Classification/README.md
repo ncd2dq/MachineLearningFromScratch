@@ -38,4 +38,8 @@ In a way, you can think of the Neural Network as transforming the feature data i
 
 # Back Propogation
 
-Back propogation is the process by which the network updates the weights of all the synapses within itself by propogating the error of the final output backwards through the network. This involves a bit of calculus, but is rather simple to implement in code for a feed forward network.
+Back propogation is the process by which the network updates the weights of all the synapses within itself by propogating the error of the final output backwards through the network. This involves a bit of calculus, but is rather simple to implement in code for a feed forward network. In short, we multiply the error by the derivative of the activation function at a given layer and use this to calculate how much we want to update our weights.
+
+By multiplying the error by the derivative of the activation function, we are asking the simple question - for a given node, how much is our activation function changing at the values in our current layer. Let's look at the sigmoid function, for example: 
+
+When the value of x is extremely positive (NN is very certain in the positive direction) and when the y value is extremely negative (NN is very certain in the negative direction), the derivative of the sigmoid is very small. This means that that weights in that node will not be updated very much. This makes sense because we don't want to change neurons if they are very certain, only those with less certain outputs (which correclates to areas where the derivative is very large).
